@@ -1,0 +1,604 @@
+/* ---------- تنظیمات اصلی ---------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #061a36;
+  --navy-light: #0d2b52;
+  --gold: #c99b35;
+  --gold-light: #e9c66b;
+  --cream: #f8f5ed;
+  --white: #ffffff;
+  --text: #19263a;
+  --gray: #667085;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+
+/* ---------- منوی بالای سایت ---------- */
+
+.header {
+  min-height: 82px;
+  padding: 15px 6%;
+  background: rgba(6, 26, 54, 0.98);
+  border-bottom: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  color: var(--white);
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--gold-light);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: var(--gold-light);
+}
+
+.language-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.language-buttons button {
+  padding: 8px 13px;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.language-buttons button:hover,
+.language-buttons button.active {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+
+/* ---------- بخش اول سایت ---------- */
+
+.hero {
+  min-height: 720px;
+  padding: 70px 7%;
+  display: grid;
+  grid-template-columns: minmax(320px, 500px) 1fr;
+  align-items: center;
+  gap: 75px;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(201, 155, 53, 0.18), transparent 30%),
+    linear-gradient(135deg, #031126, #0b2a50);
+  overflow: hidden;
+}
+
+.doctor-image {
+  position: relative;
+  padding: 10px;
+  border: 2px solid var(--gold);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.doctor-image::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 85px;
+  height: 85px;
+  border-top: 4px solid var(--gold-light);
+  border-left: 4px solid var(--gold-light);
+  border-radius: 20px 0 0 0;
+}
+
+.doctor-image img {
+  display: block;
+  width: 100%;
+  max-height: 610px;
+  object-fit: contain;
+  border-radius: 17px;
+  background: var(--white);
+}
+
+.hero-text {
+  max-width: 720px;
+}
+
+.small-title {
+  margin-bottom: 12px;
+  color: var(--gold-light);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-bottom: 8px;
+  color: var(--white);
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.08;
+}
+
+.hero h2 {
+  margin-bottom: 18px;
+  color: var(--gold-light);
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 3vw, 38px);
+  font-weight: normal;
+}
+
+.license {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 8px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  color: var(--gold-light);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.intro {
+  max-width: 680px;
+  margin-bottom: 32px;
+  color: #dce5f1;
+  font-size: 18px;
+}
+
+.main-button {
+  display: inline-block;
+  padding: 14px 27px;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  background: var(--gold);
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.main-button:hover {
+  background: transparent;
+  color: var(--gold-light);
+}
+
+
+/* ---------- عنوان بخش‌ها ---------- */
+
+.about,
+.services {
+  padding: 95px 7%;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.section-heading p {
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin-top: 8px;
+  color: var(--navy);
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 5vw, 52px);
+}
+
+
+/* ---------- درباره دکتر ---------- */
+
+.about {
+  background: var(--white);
+}
+
+.information-grid {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.information-card {
+  min-height: 235px;
+  padding: 35px;
+  border: 1px solid #e7dcc1;
+  border-radius: 16px;
+  background: var(--cream);
+  box-shadow: 0 12px 35px rgba(6, 26, 54, 0.08);
+  transition: 0.3s;
+}
+
+.information-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+}
+
+.information-card h3 {
+  margin-bottom: 15px;
+  color: var(--navy);
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+
+.information-card p {
+  color: var(--gray);
+}
+
+
+/* ---------- خدمات ---------- */
+
+.services {
+  background: var(--cream);
+}
+
+.services-grid {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  min-height: 190px;
+  padding: 30px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, var(--navy), var(--navy-light));
+  box-shadow: 0 15px 35px rgba(6, 26, 54, 0.18);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+}
+
+.service-card span {
+  display: block;
+  margin-bottom: 25px;
+  color: var(--gold-light);
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+.service-card h3 {
+  color: var(--white);
+  font-family: Georgia, serif;
+  font-size: 23px;
+}
+
+
+/* ---------- تعهد ---------- */
+
+.commitment {
+  padding: 90px 7%;
+  text-align: center;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.commitment h2 {
+  margin-bottom: 20px;
+  color: var(--gold-light);
+  font-family: Georgia, serif;
+  font-size: 44px;
+}
+
+.commitment p {
+  max-width: 780px;
+  margin: auto;
+  color: #dce5f1;
+  font-size: 18px;
+}
+
+
+/* ---------- پایین سایت ---------- */
+
+footer {
+  padding: 28px;
+  border-top: 1px solid var(--gold);
+  background: #020c1c;
+  color: var(--gold-light);
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+
+/* ---------- زبان فارسی ---------- */
+
+html[dir="rtl"] body {
+  direction: rtl;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+html[dir="rtl"] .hero-text,
+html[dir="rtl"] .information-card,
+html[dir="rtl"] .service-card {
+  text-align: right;
+}
+
+
+/* ---------- نمایش در گوشی ---------- */
+
+@media (max-width: 950px) {
+
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 50px 6%;
+    text-align: center;
+  }
+
+  .doctor-image {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .hero-text {
+    margin: auto;
+  }
+
+  .information-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  html[dir="rtl"] .hero-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .header {
+    padding: 14px 4%;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav a {
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 35px 5% 55px;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  .about,
+  .services {
+    padding: 70px 5%;
+  }
+
+  .information-card,
+  .service-card {
+    padding: 25px;
+  }
+}.instagram-button {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 14px 27px;
+  border: 2px solid #e1306c;
+  border-radius: 8px;
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.instagram-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(225, 48, 108, 0.35);
+}
+
+html[dir="rtl"] .instagram-button {
+  margin-left: 0;
+  margin-right: 12px;
+}/* ---------- بخش تماس ---------- */
+
+.contact {
+  padding: 95px 7%;
+  background: var(--white);
+}
+
+.contact-container {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 35px;
+  align-items: stretch;
+}
+
+.contact-information {
+  padding: 45px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, var(--navy), var(--navy-light));
+  color: var(--white);
+  box-shadow: 0 18px 45px rgba(6, 26, 54, 0.18);
+}
+
+.contact-information h3 {
+  margin-bottom: 18px;
+  color: var(--gold-light);
+  font-family: Georgia, serif;
+  font-size: 32px;
+}
+
+.contact-information p {
+  margin-bottom: 25px;
+  color: #dce5f1;
+  font-size: 17px;
+}
+
+.email-link {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--white);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.email-link:hover {
+  color: var(--gold-light);
+}
+
+.contact .instagram-button {
+  margin: 8px 0 0;
+  text-align: center;
+}
+
+.contact-form {
+  padding: 40px;
+  border: 1px solid #e7dcc1;
+  border-radius: 18px;
+  background: var(--cream);
+  box-shadow: 0 18px 45px rgba(6, 26, 54, 0.1);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--navy);
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 14px;
+  border: 1px solid #d7cba9;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text);
+  font-size: 16px;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 155, 53, 0.15);
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: var(--navy);
+  color: var(--gold-light);
+}
+
+html[dir="rtl"] .contact-information,
+html[dir="rtl"] .contact-form {
+  text-align: right;
+}
+
+@media (max-width: 850px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-information,
+  .contact-form {
+    padding: 30px;
+  }
+}
